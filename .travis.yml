@@ -20,8 +20,8 @@ script:
   - python manage.py migrate --noinput
   - python manage.py collectstatic --noinput
   - coverage run --source lists,superlists --branch --omit */migrations/*,*/tests/*,*/functional_tests/* manage.py test
-# after_success:
-#   - coveralls
+after_success:
+  - coveralls
 notifications:
   email:
     on_success: change
