@@ -19,7 +19,7 @@ before_script:
 script:
 - python manage.py migrate --noinput
 - python manage.py collectstatic --noinput
-- phantomjs lists/static/tests/runner.js lists/static/tests/test.html
+- phantomjs lists/static/tests/runner.js lists/static/tests/tests.html
 - coverage run --source lists,superlists --branch --omit */migrations/*,*/tests/*,*/functional_tests/*
   manage.py test
 after_success:
