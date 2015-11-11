@@ -19,10 +19,8 @@ before_script:
 script:
 - python manage.py migrate --noinput
 - python manage.py collectstatic --noinput
-- pwd
-- ls
-- ls lists
-- phantomjs django_tdd/lists/static/tests/runner.js django_tdd/lists/static/tests/tests.html
+- ls lists/static/tests
+- phantomjs lists/static/tests/runner.js lists/static/tests/tests.html
 - coverage run --source lists,superlists --branch --omit */migrations/*,*/tests/*,*/functional_tests/*
   manage.py test
 after_success:
